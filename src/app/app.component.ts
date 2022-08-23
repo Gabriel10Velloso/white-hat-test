@@ -21,13 +21,11 @@ export class AppComponent {
 
     this.router.events
       .pipe(
-        filter((e): e is NavigationStart => e instanceof NavigationStart),
+        filter((event) => event instanceof NavigationEnd),
         tap((res:any)=>{
-
           let checkRouter  = res.url.split('/')[2];
           this.variablesService.changeNavBar(checkRouter)
         }),
-        filter((event) => event instanceof NavigationEnd),
         map(() => {
           let route: ActivatedRoute = this.router.routerState.root;
           let routeTitle = '';
