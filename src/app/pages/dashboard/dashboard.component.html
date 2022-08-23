@@ -1,0 +1,50 @@
+
+<mat-toolbar  [ngStyle]="{'background': matToolbarColor}">
+  <button mat-icon-button (click)="drawer.toggle()" (click)="clickToggleNew()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <app-header (toolbarColor)="toolbarColor($event)"></app-header>
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="side">
+
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="matree-node">
+
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding  matTreeNodePaddingIndent="40px">
+          <div [ngClass]="{MatTreeNode_name_second: true}">
+            <button *ngIf=" node.name === 'Best games' ||
+                            node.name === 'All games'"
+                            mat-icon-button matTreeNodeToggle
+                            [attr.arialabel]="'Toggle ' + node.name"
+                            class="matree-node_btn_arrow">
+              <mat-icon class="matree-node_icon_arrow" [attr.arialabel]="'Toggle ' + node.name" matTreeNodeToggle>
+                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+              </mat-icon>
+            </button>
+
+            <span class="matree-node_name"
+               (click)="valSelectedRouter = node.id"
+               (click)="valSelected = node.name"
+               [routerLink]="['/white-hat/' + node.id]" routerLinkActive="select-router"
+               >
+              {{node.name}}
+          </span>
+
+          </div>
+        </mat-tree-node>
+      </mat-tree>
+
+    </mat-drawer>
+
+
+    <!--Chield Routes  -->
+    <div class="chield-route">
+      <div class="title-name" [ngClass]="{'active': clickToggle == true}"> {{valSelected}}</div>
+      <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>
+
+
+

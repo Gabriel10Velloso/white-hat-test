@@ -1,0 +1,40 @@
+.matree-node {
+    margin-bottom: 10vh;
+  &_icon_arrow {
+    font-size: 18px;
+  }
+
+  &_btn_arrow {
+    margin: 0 -10px 0 0;
+  }
+  &_name{
+    cursor: pointer;
+  }
+}
+
+.chield-route {
+  margin-top: 100px;
+}
+
+app-header {
+  width: 90%;
+  margin-left: 40px;
+}
+
+.select-router {
+  background:var(--contrast);
+  padding: 1px 5px 1px 2px;
+  color: white;
+  font-weight: 500;
+}
+
+.title-name{
+  display: none;
+  margin-left: 9%;
+  margin-bottom: 3vh;
+  font-size: 20px;
+  font-weight: bold;
+  &.active{
+    margin-left: 3%;
+  }
+}

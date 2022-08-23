@@ -1,0 +1,43 @@
+nav {
+  color: var(--white);
+  line-height: var(--nav);
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      text-align: center;
+      outline: 0;
+      padding: 0 5px 0 5px;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &.active,
+      &:hover {
+        font-weight: 500;
+        background-color: var(--contrast);
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  nav {
+    ul {
+      li {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  nav {
+    display: none;
+  }
+}

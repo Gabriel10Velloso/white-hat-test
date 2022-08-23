@@ -1,0 +1,36 @@
+<app-loader *ngIf="loader"></app-loader>
+<section class="white-hat">
+
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+
+    <div *ngFor="let game of (beastGames$ | async); let i = index; let last = last;" >
+
+      <div class="flip-card" xFlex="15" >
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img class="flip-card_img" mat-card-image [src]="game.image" alt="With Hat">
+          </div>
+
+          <div class="flip-card-back">
+            <span class="flip-card-back_value" [ngClass]="{'active': game.amount !== undefined}">
+              {{ game.amount | currency:'GBP':'symbol-narrow':'4.2-2' }}
+            </span>
+
+            <img class="flip-card-back_new" *ngIf="searchCategory(game)" src="./assets/img/new.png" alt="With Hat">
+
+            <span class="flip-card-back_pay">
+              <i class="icon material-icons">play_arrow</i>
+            </span>
+            <div class="flip-card-back_name">{{game.name}}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="lengthGames.length  == []">
+    <app-not-found></app-not-found>
+  </div>
+
+</section>

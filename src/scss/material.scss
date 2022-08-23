@@ -1,0 +1,61 @@
+// ========= MATERIAL SETTING ==========
+//=====================================
+
+.mat-card {
+  padding: 0;
+}
+
+.mat-toolbar {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  padding: 0;
+  z-index: 10;
+
+  .mat-icon {
+    background: var(--contrast);
+    width: 35px;
+    height: 30px;
+    padding-top: 3px;
+    font-size: 25px;
+    border-radius: 50%;
+    margin-left: 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+}
+
+.mat-drawer {
+  margin-top: 50px;
+  padding-top: 20px;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  background: var(--nav);
+}
+
+
+.mat-tree-node {
+  min-height: 30px;
+  height: 30px;
+  background: var(--nav);
+}
+
+.mat-tree {
+  background: var(--nav);
+}
+
+.mat-drawer-container {
+  background: white;
+}
+
+
+
+@media only screen and (max-width: 960px) {
+  .title-name {
+    display: inline-table;
+  }
+}

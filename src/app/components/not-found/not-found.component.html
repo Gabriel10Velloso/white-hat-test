@@ -1,0 +1,29 @@
+<section>
+  <!-- fxLayout="row wrap" fxLayout="column"-->
+  <!-- Another way to write fxLayout example-->
+  <!-- That way we have more control -->
+  <div gdAreas="error1 error2 | img img"
+       gdColumns="54% 46% 100%"
+       gdColumns.sm="60% 40% 100%"
+       gdColumns.xs="60% 40% 100%"
+       gdColumns.lt-md="58% 42% 100%"
+       gdColumns.lt-sm="60% 40% 100%"
+       gdColumns.gt-xs="57% 33% 100%">
+
+    <!-- Ex: Error 1 -->
+    <div gdArea="error1" fxLayoutAlign="end end" class="error1">
+      <div>😅</div>
+    </div>
+
+    <!-- Ex: Error 2 -->
+    <div gdArea="error2" fxLayoutAlign="start start" class="error2">
+      <!-- teste 2 -->
+    </div>
+
+    <!-- Ex: Img Error -->
+    <div gdArea="img" fxLayoutAlign="center center" class="error-img">
+      <div>Sorry, game not found at time.</div>
+    </div>
+  </div>
+
+</section>

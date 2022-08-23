@@ -1,0 +1,7 @@
+The share folder is used to add:
+ - PIPES
+ - DIRECTIVES
+ - VALIDATORS
+
+AND:
+ - All services not tied to business logic
